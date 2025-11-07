@@ -13,8 +13,10 @@ Commands:
 """
 
 import sys
-from src.trie import Trie
-from src.io_utils import load_csv, save_csv
+import os
+sys.path.insert(0, os.path.dirname(__file__))
+from trie import Trie
+from io_utils import load_csv, save_csv
 
 PROMPT = ""  # keep outputs machine-friendly (no prompt)
 
@@ -45,7 +47,7 @@ def main():
             # NOTE: you may want a method to iterate words with scores
             # For now, expect students to add an iterator/accessor.
             # Placeholder prints nothing — update as you implement.
-            # save_csv(path, trie.items())
+            save_csv(path, trie.items())
             continue
 
         if cmd == 'insert' and len(parts) == 3:
